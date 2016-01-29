@@ -1,0 +1,10 @@
+{
+  "extends": "standard",
+  "parser", "babel-eslint",
+  "env": {
+    "jasmine": true,
+  },
+  "globals": {
+    "waitsForPromise": true,
+  },
+}
