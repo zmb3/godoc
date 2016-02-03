@@ -1,0 +1,30 @@
+@import "ui-variables";
+
+.godoc-tooltip {
+  //white-space: pre !important;
+  border: @overlay-border-color;
+  border-width: thin;
+  display: flex;
+  background-color: lighten(@overlay-background-color, 15%);
+  border-radius: 15px;
+  padding: 5px;
+  max-width: 800px;
+}
+
+
+#godoc-progress {
+  visibility: hidden;
+}
+
+
+// When the "godoc-in-progress" class is applied,
+// the progress indicator is visible and the actual
+// doc message is hidden.
+
+#godoc-message.godoc-in-progress {
+  visibility: hidden;
+}
+
+#godoc-progress.godoc-in-progress {
+  visibility: visible;
+}
