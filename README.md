@@ -1,5 +1,8 @@
 # godoc
 
+[![Build status](https://ci.appveyor.com/api/projects/status/fh6q7tayuwqqd1sq?svg=true)](https://ci.appveyor.com/project/zmb3/godoc)
+[![Build Status](https://travis-ci.org/zmb3/godoc.svg?branch=master)](https://travis-ci.org/zmb3/godoc)
+
 An [Atom](https://atom.io) package for the Go language that shows documentation
 for identifiers in source code.
 
