@@ -1,7 +1,7 @@
 {
   "name": "godoc",
   "main": "./lib/main",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "A package for the Go language that provides documentation for identifiers in source code.",
   "keywords": [
     "go",
