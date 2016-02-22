@@ -11,8 +11,7 @@ for identifiers in source code.
 ## Prerequisites
 
 This package uses the [`gogetdoc`](https://github.com/zmb3/gogetdoc) tool to
-find documentation.  This tool **requires Go 1.6**, which is currently available
-by building tip or installing the 1.6 release candidate from https://golang.org/dl/.
+find documentation.  This tool **requires Go 1.6**.
 
 Once you've installed Go 1.6, simply `go get github.com/zmb3/gogetdoc` and make
 sure `$GOPATH/bin` is on your `$PATH`.
