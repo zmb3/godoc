@@ -20,4 +20,4 @@ sure `$GOPATH/bin` is on your `$PATH`.
 
 Place the cursor over the identifier to get documentation for, and press <kbd>Alt</kbd> + <kbd>D</kbd>.
 
-To close the documentation window, press <kbd>esc</kbd>
+To close the documentation window, press <kbd>esc</kbd> or click the 'X' in the top right corner.
