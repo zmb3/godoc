@@ -36,17 +36,18 @@
 }
 
 #godoc-progress {
-  visibility: hidden;
+  display: none;
+
+  &.godoc-in-progress {
+    display: block;
+    padding-right: 35px;
+  }
 }
 
 // When the "godoc-in-progress" class is applied,
 // the progress indicator is visible and the actual
-// doc message is hidden.
+// doc message is not displayed.
 
 #godoc-message.godoc-in-progress {
-  visibility: hidden;
-}
-
-#godoc-progress.godoc-in-progress {
-  visibility: visible;
+  display: none;
 }
