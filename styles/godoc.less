@@ -1,22 +1,16 @@
 @import "ui-variables";
 
 @godoc-bg: lighten(@overlay-background-color, 1%);
+@godoc-border-width: 3px;
 
 .godoc-tooltip {
-  white-space: pre-wrap;
-  margin-top: 4px;
-  display: flex;
-  border-color: @overlay-border-color;
+  position: relative;
+  margin-top: @godoc-border-width;
+  border: @godoc-border-width solid @overlay-border-color;
   border-radius: @component-border-radius * 1.5;
-  border-top-left-radius: 0;
   box-shadow: 0 1px 3px hsla(0, 0, 0%, 0.4);
   color: @text-color;
   background: @godoc-bg;
-  padding: 4px;
-  overflow-y: auto; // TODO: still not getting scroll bars...
-  //max-width: 800px;
-  max-height: 50%;
-
   transition: opacity 300ms;
   &.transparent {
     opacity: 0.2;
@@ -25,24 +19,38 @@
   &::before {
     content: "";
     position: absolute;
-    top: -4px;
-    left: 0;
-    border: 4px solid;
-    border-color: transparent transparent @godoc-bg @godoc-bg;
+    top: -@godoc-border-width * 3;
+    left: -@godoc-border-width;
+    border: @godoc-border-width * 1.5 solid;
+    border-color: transparent transparent @overlay-border-color @overlay-border-color;
+  }
+
+  .close {
+    position: absolute;
+    top: @component-padding/2;
+    right: @component-padding/2;
+    color: lighten(@text-color, 50%);
+    text-shadow: none;
+    &::before {
+      margin-right: 0;
+    }
   }
 }
 
-.close {
-  color: lighten(@text-color, 50%);
-  text-shadow: none;
+#godoc-message {
+  // overflow: auto; // TODO: still not getting scroll bars...
+  width: 800px;
+  padding: @component-padding;
+  padding-right: @component-icon-size + @component-padding;
+  white-space: pre-wrap;
 }
 
 #godoc-progress {
   display: none;
+  padding: @component-padding*2 @component-padding*4;
 
   &.godoc-in-progress {
     display: block;
-    padding-right: 35px;
   }
 }
 
