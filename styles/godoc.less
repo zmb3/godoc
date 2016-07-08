@@ -3,6 +3,27 @@
 @godoc-bg: lighten(@overlay-background-color, 1%);
 @godoc-border-width: 3px;
 
+.godoc {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-image: scroll;
+  position: relative;
+  display: inline-block;
+}
+
+.godoc-container {
+  width: auto;
+  display: inline-block;
+  padding: 0;
+  color: @text-color;
+  overflow: hidden;
+}
+
+.godoc-scroller {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
 .godoc-tooltip {
   position: relative;
   margin-top: @godoc-border-width;
@@ -12,6 +33,9 @@
   color: @text-color;
   background: @godoc-bg;
   transition: opacity 300ms;
+  overflow-y: visible;
+  overflow-x: hidden;
+
   &.transparent {
     opacity: 0.2;
   }
@@ -38,11 +62,11 @@
 }
 
 #godoc-message {
-  // overflow: auto; // TODO: still not getting scroll bars...
   width: 800px;
   padding: @component-padding;
   padding-right: @component-icon-size + @component-padding;
   white-space: pre-wrap;
+  overflow-y: visible;
 }
 
 #godoc-progress {
