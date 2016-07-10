@@ -18,7 +18,7 @@ environment:
       - ATOM_CHANNEL: stable
       - ATOM_CHANNEL: beta
 
-instsall:
+install:
   - go version
   - go env
   - mkdir c:\gopath
