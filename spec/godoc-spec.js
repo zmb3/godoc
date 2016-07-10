@@ -51,7 +51,7 @@ describe('godoc', () => {
     }
   })
 
-  describe('when a file is opened', () => {
+  describe('when the godoc command is invoked on a valid go file', () => {
     beforeEach(() => {
       runs(() => {
         source = path.join(__dirname, 'fixtures')
@@ -69,7 +69,7 @@ describe('godoc', () => {
 
     it('shows/hides the view correctly', () => {
       let view = atom.views.getView(editor)
-      editor.setCursorBufferPosition([23, 10])
+      editor.setCursorBufferPosition([25, 10])
       expect(godoc.marker).toBeFalsy()
       let result = false
       waitsForPromise(() => {
@@ -89,6 +89,21 @@ describe('godoc', () => {
         atom.commands.dispatch(view, 'godoc:hide')
         expect(godoc.marker).toBeFalsy()
         expect(viewPresent()).toBe(false)
+      })
+    })
+
+    it('gets the correct documentation', () => {
+      let result = false
+      editor.setCursorBufferPosition([24, 10])
+      waitsForPromise(() => {
+        return godoc.commandInvoked().then((r) => {
+          result = r
+        })
+      })
+      runs(() => {
+        expect(result).toBeTruthy()
+        expect(result.success).toBe(true)
+        expect(result.result.exitcode).toBe(0)
       })
     })
   })
