@@ -13,9 +13,6 @@ for identifiers in source code.
 This package uses the [`gogetdoc`](https://github.com/zmb3/gogetdoc) tool to
 find documentation.  This tool **requires Go 1.6**.
 
-Once you've installed Go 1.6, simply `go get github.com/zmb3/gogetdoc` and make
-sure `$GOPATH/bin` is on your `$PATH`.
-
 ## Usage
 
 Place the cursor over the identifier to get documentation for, and press <kbd>Alt</kbd> + <kbd>D</kbd>.
