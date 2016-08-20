@@ -26,13 +26,11 @@ describe('godoc', () => {
 
     waitsForPromise(() => {
       return atom.packages.activatePackage('language-go').then(() => {
-        return atom.packages.activatePackage('environment').then(() => {
-          return atom.packages.activatePackage('go-config').then(() => {
-            return atom.packages.activatePackage('godoc').then((pack) => {
-              mainModule = pack.mainModule
-              godoc = mainModule.godoc
-              return
-            })
+        return atom.packages.activatePackage('go-config').then(() => {
+          return atom.packages.activatePackage('godoc').then((pack) => {
+            mainModule = pack.mainModule
+            godoc = mainModule.godoc
+            return
           })
         })
       })
