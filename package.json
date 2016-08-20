@@ -46,7 +46,8 @@
   "standard": {
     "globals": [
       "atom",
-      "waitsForPromise"
+      "waitsForPromise",
+      "HTMLElement"
     ]
   }
 }
