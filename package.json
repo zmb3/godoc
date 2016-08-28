@@ -20,7 +20,7 @@
     "atom": ">=1.5.3 <2.0.0"
   },
   "dependencies": {
-    "atom-package-deps": "4.3.0"
+    "atom-package-deps": "4.3.1"
   },
   "devDependencies": {
     "standard": "^8.0.0-beta.5",
