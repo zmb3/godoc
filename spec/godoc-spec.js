@@ -105,4 +105,42 @@ describe('godoc', () => {
       })
     })
   })
+
+  describe('when the godoc command is invoked on an unsaved go file', () => {
+    beforeEach(() => {
+      runs(() => {
+        source = path.join(__dirname, 'fixtures')
+        target = path.join(gopath, 'src', 'godoctest')
+        fs.copySync(source, target)
+      })
+
+      waitsForPromise(() => {
+        return atom.workspace.open(path.join(target, 'main.go')).then((e) => {
+          e.setCursorBufferPosition([25, 46])
+          e.selectLinesContainingCursors()
+          e.insertText('fmt.Printf("this line has been modified\n")')
+          expect(e.isModified()).toBe(true)
+          editor = e
+          return
+        })
+      })
+    })
+
+    it('gets the correct documentation', () => {
+      let result = false
+      editor.setCursorBufferPosition([25, 7])
+      waitsForPromise(() => {
+        return godoc.commandInvoked().then((r) => {
+          result = r
+        })
+      })
+      runs(() => {
+        expect(result).toBeTruthy()
+        expect(result.success).toBe(true)
+        expect(result.result.exitcode).toBe(0)
+        expect(result.result.stdout).toBeTruthy()
+        expect(result.result.stdout.startsWith(`import "fmt"`)).toBe(true)
+      })
+    })
+  })
 })
