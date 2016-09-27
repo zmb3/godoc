@@ -84,7 +84,7 @@ describe('godoc', () => {
         }
         expect(result).toBeTruthy()
         expect(viewPresent()).toBe(true)
-        atom.commands.dispatch(view, 'godoc:hide')
+        atom.commands.dispatch(view, 'core:cancel')
         expect(godoc.marker).toBeFalsy()
         expect(viewPresent()).toBe(false)
       })
