@@ -65,31 +65,6 @@ describe('godoc', () => {
       })
     })
 
-    it('shows/hides the view correctly', () => {
-      let view = atom.views.getView(editor)
-      editor.setCursorBufferPosition([25, 10])
-      expect(godoc.marker).toBeFalsy()
-      let result = false
-      waitsForPromise(() => {
-        return godoc.commandInvoked().then((r) => {
-          result = r
-          return
-        })
-      })
-      runs(() => {
-        expect(godoc.marker).toBeTruthy()
-        let viewPresent = () => {
-          return view.classList.contains('godoc-display-active') ||
-            view.classList.contains('godoc-in-progress')
-        }
-        expect(result).toBeTruthy()
-        expect(viewPresent()).toBe(true)
-        atom.commands.dispatch(view, 'core:cancel')
-        expect(godoc.marker).toBeFalsy()
-        expect(viewPresent()).toBe(false)
-      })
-    })
-
     it('gets the correct documentation', () => {
       let result = false
       editor.setCursorBufferPosition([24, 10])
@@ -139,7 +114,7 @@ describe('godoc', () => {
         expect(result.success).toBe(true)
         expect(result.result.exitcode).toBe(0)
         expect(result.result.stdout).toBeTruthy()
-        expect(result.result.stdout.startsWith(`import "fmt"`)).toBe(true)
+        expect(result.result.stdout.startsWith('import "fmt"')).toBe(true)
       })
     })
   })

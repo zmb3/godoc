@@ -1,8 +1,5 @@
  {
    "atom-text-editor": {
      "alt-d": "golang:showdoc"
-   },
-   "atom-text-editor.godoc-display-active": {
-     "escape": "core:cancel"
    }
  }
