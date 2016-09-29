@@ -139,7 +139,7 @@ describe('godoc', () => {
         expect(result.success).toBe(true)
         expect(result.result.exitcode).toBe(0)
         expect(result.result.stdout).toBeTruthy()
-        expect(result.result.stdout.startsWith(`import "fmt"`)).toBe(true)
+        expect(result.result.stdout.startsWith('import "fmt"')).toBe(true)
       })
     })
   })
