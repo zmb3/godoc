@@ -1,3 +1,21 @@
 .godoc-panel {
+  position: relative;
   white-space: pre-wrap;
+  width: 100%;
+  overflow-y: hidden;
+  height: 350px;        // TODO remove explicit height
+  align-content: flex-end;
+}
+
+.godoc-doc {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.godoc-follow-cursor {
+  position: absolute;
+  height: auto;
+  top: 20px;
+  right: 60px;
 }
