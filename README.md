@@ -6,7 +6,7 @@
 An [Atom](https://atom.io) package for the Go language that shows documentation
 for identifiers in source code.
 
-![Screenshot](https://www.dropbox.com/s/0f9o08p4j7yod58/godoc.PNG?raw=1)
+![Screenshot](https://cloud.githubusercontent.com/assets/7527103/19372483/c9f1a06a-9179-11e6-8ba0-8f5096f7a49c.png)
 
 ## Prerequisites
 
