@@ -1,5 +1,10 @@
 # godoc
 
+## Deprecated ##
+
+This package is deprecated - its functionality has been merged into the
+[go-plus](https://atom.io/packages/go-plus) package.
+
 [![Build status](https://ci.appveyor.com/api/projects/status/fh6q7tayuwqqd1sq?svg=true)](https://ci.appveyor.com/project/zmb3/godoc)
 [![Build Status](https://travis-ci.org/zmb3/godoc.svg?branch=master)](https://travis-ci.org/zmb3/godoc)
 
