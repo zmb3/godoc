@@ -1,5 +1,7 @@
 # godoc
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zmb3/godoc.svg)](https://greenkeeper.io/)
+
 ## Deprecated ##
 
 This package is deprecated - its functionality has been merged into the
