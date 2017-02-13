@@ -20,8 +20,8 @@
     "atom": ">=1.5.3 <2.0.0"
   },
   "dependencies": {
-    "atom-package-deps": "4.3.1",
-    "etch": "0.6.3"
+    "atom-package-deps": "4.4.0",
+    "etch": "0.8.0"
   },
   "devDependencies": {
     "standard": "^8.3.0",
